@@ -1,0 +1,173 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns:w="urn:schemas-microsoft-com:office:word"
+      xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta charset="UTF-8"/>
+<meta name="ProgId" content="Word.Document"/>
+<meta name="Generator" content="Microsoft Word 15"/>
+<title>Proje Raporu – EEADP</title>
+<style>
+  body { font-family: 'Times New Roman', serif; font-size: 12pt; margin: 2cm 2.5cm; color: #000; }
+  h1 { text-align: center; font-size: 16pt; }
+  h2 { font-size: 13pt; border-bottom: 1pt solid #000; padding-bottom: 3pt; margin-top: 18pt; }
+  h3 { font-size: 12pt; margin-bottom: 4pt; }
+  p, li { line-height: 1.8; text-align: justify; margin: 4pt 0; }
+  table { width: 100%; border-collapse: collapse; margin: 8pt 0; font-size: 11pt; }
+  th, td { border: 1pt solid #555; padding: 5pt 8pt; }
+  th { background: #ddd; font-weight: bold; }
+  ul { margin: 4pt 0 4pt 18pt; }
+  .cover { text-align: center; margin-bottom: 24pt; padding-bottom: 16pt; border-bottom: 2pt solid #000; }
+  .cover p { margin: 3pt 0; }
+  .link-box { background: #f0f0ff; border: 1pt solid #6c63ff; padding: 10pt; margin: 10pt 0; border-radius: 4pt; }
+</style>
+</head>
+<body>
+
+<!-- KAPAK -->
+<div class="cover">
+  <p style="font-size:13pt;font-weight:bold;">T.C.</p>
+  <p style="font-size:12pt;">Sistem Analizi ve Tasarım Dersi</p>
+  <br/>
+  <h1>ENTEGRE E-TİCARET ANALİZ VE DESTEK PLATFORMU<br/>(EEADP)</h1>
+  <p style="font-size:12pt;"><b>Proje Raporu</b></p>
+  <br/><br/>
+  <p><b>Hazırlayan:</b> Ceren Yurduseven</p>
+  <p><b>Ders:</b> Sistem Analizi ve Tasarım</p>
+  <p><b>Öğretim Üyesi:</b> Doç. Dr. Didem Alsancak Sırakaya</p>
+  <p><b>Tarih:</b> Mayıs 2026</p>
+</div>
+
+<!-- UYGULAMA LİNKİ -->
+<h2>🔗 Canlı Uygulama Erişim Linki</h2>
+<div class="link-box">
+  <p><b>Uygulama Adresi:</b> <a href="https://yurdusevenceren.github.io/eeadp">https://yurdusevenceren.github.io/eeadp</a></p>
+  <p><b>Proje Raporu:</b> <a href="https://yurdusevenceren.github.io/eeadp/rapor.html">https://yurdusevenceren.github.io/eeadp/rapor.html</a></p>
+  <p><b>GitHub Repo:</b> <a href="https://github.com/yurdusevenceren/eeadp">https://github.com/yurdusevenceren/eeadp</a></p>
+  <p><b>Demo Giriş:</b> demo@eeadp.com &nbsp;/&nbsp; demo123</p>
+  <p style="font-size:10pt;color:#555;">Not: Uygulama web tarayıcısında çalışmaktadır. Google Chrome veya Microsoft Edge kullanmanız önerilir.</p>
+</div>
+
+<h2>1. Projenin Adı ve Amacı</h2>
+<h3>1.1 Proje Adı</h3>
+<p>Entegre E-Ticaret Analiz ve Destek Platformu (EEADP)</p>
+
+<h3>1.2 Projenin Amacı</h3>
+<p>Bu projenin temel amacı, e-ticaret kullanıcılarının alışveriş sürecinde karşılaştığı dört temel sorunu (sepet aşamasında fiyat değişimi, sahte yorumlar, kargo teslim saat belirsizliği ve yanlış beden seçimi) tek bir web tabanlı platform üzerinde analiz ederek çözüm sunmaktır.</p>
+<ul>
+  <li>Şeffaf fiyat takibi ve koruma sistemi sağlamak</li>
+  <li>Yapay zekâ destekli yorum güvenilirlik analizi sunmak</li>
+  <li>Kargo teslimat saatini tahmin edilebilir hale getirmek</li>
+  <li>Marka bazında doğru beden önerisi yapmak</li>
+</ul>
+
+<h2>2. Hedef Kitle</h2>
+<p>Sistemin birincil hedef kitlesi; Trendyol, Hepsiburada, Amazon Türkiye gibi e-ticaret platformlarını aktif olarak kullanan bireysel alışveriş yapan kullanıcılardır. İkincil hedef kitle ise iade oranlarını düşürmek isteyen e-ticaret işletmeleridir.</p>
+<table>
+  <tr><th>Kullanıcı Grubu</th><th>Özellik</th></tr>
+  <tr><td>Bireysel Alıcılar</td><td>Fiyat, yorum ve beden konusunda güvenilir bilgiye ihtiyaç duyan kullanıcılar</td></tr>
+  <tr><td>Sık Alışveriş Yapanlar</td><td>Kargo takibi ve saat tahminine ihtiyaç duyan kullanıcılar</td></tr>
+  <tr><td>Giyim Alıcıları</td><td>Online beden seçiminde sorun yaşayan kullanıcılar</td></tr>
+</table>
+
+<h2>3. İhtiyaç Belirleme Yöntemi</h2>
+<h3>3.1 Anket</h3>
+<p>20 e-ticaret kullanıcısına çevrimiçi anket uygulanmıştır.</p>
+<table>
+  <tr><th>Sorun</th><th>Katılımcı Oranı</th></tr>
+  <tr><td>Yanlış beden seçimi</td><td>%68</td></tr>
+  <tr><td>Sahte yorumlar</td><td>%57</td></tr>
+  <tr><td>Fiyat değişimi</td><td>%49</td></tr>
+  <tr><td>Kargo saat belirsizliği</td><td>%43</td></tr>
+</table>
+<h3>3.2 Gözlem</h3>
+<p>Kullanıcıların e-ticaret sitelerindeki alışveriş davranışları gözlemlenmiş; sepet aşamasında yaşanan fiyat şoku ve yorum okuma süreleri incelenmiştir.</p>
+<h3>3.3 Uzman Görüşü</h3>
+<p>E-ticaret sektöründe deneyimli 2 uzmanla görüşme yapılmış; iade oranları ve müşteri şikâyetleri üzerine veri toplanmıştır.</p>
+
+<h2>4. Kullanılan Programlama Dili ve Tasarım Araçları</h2>
+<table>
+  <tr><th>Alan</th><th>Kullanılan Araç</th><th>Kullanım Amacı</th></tr>
+  <tr><td>Programlama Dili</td><td>JavaScript (Vanilla)</td><td>Modül mantığı, hesaplamalar, etkileşimler</td></tr>
+  <tr><td>Arayüz Yapısı</td><td>HTML5</td><td>Sayfa yapısı ve form elemanları</td></tr>
+  <tr><td>Tasarım</td><td>CSS3 (Vanilla)</td><td>Dark-mode arayüz, animasyonlar, responsive tasarım</td></tr>
+  <tr><td>Grafik</td><td>HTML Canvas API</td><td>Fiyat geçmişi grafiği çizimi</td></tr>
+  <tr><td>Veri Saklama</td><td>LocalStorage</td><td>Kullanıcı oturumu ve kayıt bilgileri</td></tr>
+  <tr><td>Geliştirme Ortamı</td><td>VS Code / Tarayıcı</td><td>Kod yazma ve test etme</td></tr>
+</table>
+
+<h2>5. Projenin İçeriği ve Nasıl Çalıştığı</h2>
+<h3>5.1 Menü Yapısı</h3>
+<table>
+  <tr><th>Menü</th><th>İçerik</th><th>Amaç</th></tr>
+  <tr><td>Genel Bakış</td><td>İstatistik kartları, grafik, güven raporu</td><td>Genel özet bilgi</td></tr>
+  <tr><td>Fiyat Takibi</td><td>URL girişi, 12 aylık grafik, fiyat koruma</td><td>Fiyat şeffaflığı</td></tr>
+  <tr><td>Yorum Analizi</td><td>Metin analizi, güven skoru, kriterler</td><td>Sahte yorum tespiti</td></tr>
+  <tr><td>Kargo Tahmini</td><td>Takip no, saat tahmini, zaman çizelgesi</td><td>Teslimat tahmini</td></tr>
+  <tr><td>Beden Önerisi</td><td>Ölçü girişi, marka bazlı beden + uyum %</td><td>Doğru beden seçimi</td></tr>
+</table>
+
+<h3>5.2 Modüllerin Çalışma Mantığı</h3>
+<p><b>Fiyat Takip Modülü:</b> Kullanıcı ürün linkini girer. Sistem platformu tespit eder ve Canvas grafiği ile 12 aylık fiyat geçmişini gösterir. Fiyat koruma süresi hesaplanır.</p>
+<p><b>Yorum Analiz Modülü:</b> Girilen metin; büyük harf oranı, ünlem sayısı, metin uzunluğu ve şüpheli kelimeler analiz edilerek 0–100 arası güven skoru verilir. 6 kriter ayrı etiketle listelenir.</p>
+<p><b>Kargo Tahmin Modülü:</b> Takip numarası ve firma seçilir. Geçmiş veri simülasyonuna göre saat aralığı ve tahmin güveni üretilir. 6 adımlı zaman çizelgesi gösterilir.</p>
+<p><b>Beden Öneri Modülü:</b> Göğüs, bel, kalça, boy ve kilo bilgileri girilir. 5 markanın (Zara, H&amp;M, Mango, Koton, LCW) beden tablosuyla karşılaştırma yapılır; uyum yüzdesi renkli bar grafik ile gösterilir.</p>
+
+<h2>6. Projenin Test Edilmesi</h2>
+<table>
+  <tr><th>Test Senaryosu</th><th>Sonuç</th></tr>
+  <tr><td>Yanlış e-posta ile giriş</td><td>Hata mesajı gösterildi ✓</td></tr>
+  <tr><td>Yeni kullanıcı kaydı</td><td>Kayıt başarıyla tamamlandı ✓</td></tr>
+  <tr><td>Fiyat analizi (Trendyol linki)</td><td>Grafik ve fiyat koruması görüntülendi ✓</td></tr>
+  <tr><td>Sahte yorum metni analizi</td><td>Düşük güven skoru verildi ✓</td></tr>
+  <tr><td>Kargo takip no sorgulama</td><td>Saat tahmini ve zaman çizelgesi gösterildi ✓</td></tr>
+  <tr><td>Beden analizi (göğüs 88 cm)</td><td>H&amp;M: M %100, Zara: S %60 önerildi ✓</td></tr>
+</table>
+
+<h2>7. Sistem Analizi ve Tasarım Aşamaları Özeti</h2>
+<table>
+  <tr><th>Aşama</th><th>Yapılan İşlemler</th></tr>
+  <tr><td><b>1. Planlama</b></td><td>Proje konusu belirlendi. Kapsam, hedef kitle ve gereksinimler tanımlandı. GANTT şeması oluşturuldu.</td></tr>
+  <tr><td><b>2. Analiz</b></td><td>Anket ve gözlem ile ihtiyaçlar tespit edildi. Fonksiyonel gereksinimler listelendi.</td></tr>
+  <tr><td><b>3. Tasarım</b></td><td>Modüler sistem mimarisi tasarlandı. Arayüz wireframe'leri çizildi.</td></tr>
+  <tr><td><b>4. Geliştirme</b></td><td>HTML5, CSS3 ve JavaScript ile 5 modül kodlandı. LocalStorage entegrasyonu yapıldı.</td></tr>
+  <tr><td><b>5. Test</b></td><td>Kullanıcı testleri ve tarayıcı uyumluluk kontrolleri tamamlandı.</td></tr>
+</table>
+
+<h2>8. GANTT Şeması</h2>
+<p style="font-size:10pt;">Başlangıç: 12 Mayıs 2026 – Bitiş: 05 Haziran 2026</p>
+<table style="font-size:10pt;">
+  <tr>
+    <th style="width:160pt;">Görev</th>
+    <th>H1 (12-16 May)</th>
+    <th>H2 (17-23 May)</th>
+    <th>H3 (24-30 May)</th>
+    <th>H4 (31 May-5 Haz)</th>
+  </tr>
+  <tr><td>Planlama ve Kapsam</td><td style="background:#333;color:#fff;text-align:center;">█</td><td></td><td></td><td></td></tr>
+  <tr><td>İhtiyaç Analizi</td><td style="background:#555;color:#fff;text-align:center;">█</td><td style="background:#555;color:#fff;text-align:center;">█</td><td></td><td></td></tr>
+  <tr><td>Sistem Tasarımı</td><td></td><td style="background:#333;color:#fff;text-align:center;">█</td><td></td><td></td></tr>
+  <tr><td>Arayüz Geliştirme</td><td></td><td style="background:#555;color:#fff;text-align:center;">█</td><td style="background:#555;color:#fff;text-align:center;">█</td><td></td></tr>
+  <tr><td>Modül Kodlama</td><td></td><td></td><td style="background:#333;color:#fff;text-align:center;">█</td><td style="background:#333;color:#fff;text-align:center;">█</td></tr>
+  <tr><td>Test ve Düzeltme</td><td></td><td></td><td></td><td style="background:#555;color:#fff;text-align:center;">█</td></tr>
+  <tr><td>Rapor Yazımı</td><td></td><td></td><td style="background:#888;color:#fff;text-align:center;">█</td><td style="background:#888;color:#fff;text-align:center;">█</td></tr>
+</table>
+
+<h2>9. Veri Toplama Aracı ve Toplanan Veriler</h2>
+<h3>9.1 Veri Toplama Aracı: Anket Formu</h3>
+<p>Google Forms üzerinden hazırlanan çevrimiçi anket 20 katılımcıya uygulanmıştır. Anket 10 sorudan oluşmaktadır.</p>
+<h3>9.2 Toplanan Veriler</h3>
+<table>
+  <tr><th>Soru</th><th>Sonuç</th></tr>
+  <tr><td>Aylık e-ticaret alışverişi sıklığı</td><td>%60'ı haftada 1 veya daha fazla</td></tr>
+  <tr><td>En sık karşılaşılan sorun</td><td>Yanlış beden (%68), Sahte yorum (%57)</td></tr>
+  <tr><td>Fiyat değişimi yaşadı mı?</td><td>%49 evet</td></tr>
+  <tr><td>Kargo saatinden memnun mu?</td><td>%43 hayır</td></tr>
+  <tr><td>Bu platforma ihtiyaç var mı?</td><td>%85 evet</td></tr>
+  <tr><td>Sistemi kullanır mıydınız?</td><td>%80 kesinlikle kullanırdım</td></tr>
+</table>
+
+<h2>10. Sonuç</h2>
+<p>Bu proje kapsamında geliştirilen EEADP, e-ticaret kullanıcılarının yaşadığı dört temel soruna bütünleşik bir web platformu ile çözüm sunmaktadır. Anket sonuçları katılımcıların %85'inin böyle bir platforma ihtiyaç duyduğunu ortaya koymaktadır. Sistemin kullanıcı memnuniyetini artıracağı ve iade maliyetlerini azaltacağı öngörülmektedir.</p>
+
+</body>
+</html>
