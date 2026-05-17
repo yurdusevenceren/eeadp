@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EEADP – Entegre E-Ticaret Analiz ve Destek Platformu</title>
+  <meta name="description" content="Fiyat takibi, yorum analizi, kargo tahmini ve akıllı beden önerisi sunan entegre e-ticaret destek platformu."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- AUTH OVERLAY -->
+<div id="auth-overlay" class="auth-overlay active">
+  <div class="auth-box">
+    <div class="auth-logo">
+      <span class="logo-icon">⚡</span>
+      <span class="logo-text">EEADP</span>
+    </div>
+    <p class="auth-subtitle">E-Ticaret Analiz ve Destek Platformu</p>
+
+    <div class="auth-tabs">
+      <button class="auth-tab active" id="tab-login" onclick="switchTab('login')">Giriş Yap</button>
+      <button class="auth-tab" id="tab-register" onclick="switchTab('register')">Kayıt Ol</button>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <form id="login-form" class="auth-form" onsubmit="handleLogin(event)">
+      <div class="form-group">
+        <label>E-posta</label>
+        <input type="email" id="login-email" placeholder="ornek@email.com" required/>
+      </div>
+      <div class="form-group">
+        <label>Şifre</label>
+        <input type="password" id="login-password" placeholder="••••••••" required/>
+      </div>
+      <p class="auth-error" id="login-error"></p>
+      <button type="submit" class="btn-primary full">Giriş Yap</button>
+      <p class="auth-hint">Demo: <strong>demo@eeadp.com</strong> / <strong>demo123</strong></p>
+    </form>
+
+    <!-- REGISTER FORM -->
+    <form id="register-form" class="auth-form hidden" onsubmit="handleRegister(event)">
+      <div class="form-group">
+        <label>Ad Soyad</label>
+        <input type="text" id="reg-name" placeholder="Adınız Soyadınız" required/>
+      </div>
+      <div class="form-group">
+        <label>E-posta</label>
+        <input type="email" id="reg-email" placeholder="ornek@email.com" required/>
+      </div>
+      <div class="form-group">
+        <label>Şifre</label>
+        <input type="password" id="reg-password" placeholder="En az 6 karakter" required/>
+      </div>
+      <p class="auth-error" id="reg-error"></p>
+      <button type="submit" class="btn-primary full">Kayıt Ol</button>
+    </form>
+  </div>
+</div>
+
+<!-- MAIN APP -->
+<div id="app" class="app hidden">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <span class="logo-icon">⚡</span>
+      <span class="logo-text">EEADP</span>
+    </div>
+    <nav class="sidebar-nav">
+      <button class="nav-item active" id="nav-dashboard" onclick="showPage('dashboard')">
+        <span class="nav-icon">🏠</span><span class="nav-label">Genel Bakış</span>
+      </button>
+      <button class="nav-item" id="nav-price" onclick="showPage('price')">
+        <span class="nav-icon">💰</span><span class="nav-label">Fiyat Takibi</span>
+      </button>
+      <button class="nav-item" id="nav-review" onclick="showPage('review')">
+        <span class="nav-icon">⭐</span><span class="nav-label">Yorum Analizi</span>
+      </button>
+      <button class="nav-item" id="nav-cargo" onclick="showPage('cargo')">
+        <span class="nav-icon">📦</span><span class="nav-label">Kargo Tahmini</span>
+      </button>
+      <button class="nav-item" id="nav-size" onclick="showPage('size')">
+        <span class="nav-icon">👕</span><span class="nav-label">Beden Önerisi</span>
+      </button>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="user-info" id="user-info-sidebar"></div>
+      <button class="btn-logout" onclick="handleLogout()">Çıkış Yap</button>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        <h1 class="page-title" id="page-title">Genel Bakış</h1>
+      </div>
+      <div class="topbar-right">
+        <div class="notif-badge">🔔</div>
+        <div class="user-avatar" id="user-avatar-top"></div>
+      </div>
+    </header>
+
+    <!-- PAGES -->
+    <div class="page-container">
+
+      <!-- DASHBOARD PAGE -->
+      <section class="page active" id="page-dashboard">
+        <div class="welcome-banner">
+          <div class="welcome-text">
+            <h2 id="welcome-heading">Hoş Geldiniz! 👋</h2>
+            <p>E-ticaret deneyiminizi daha güvenli ve akıllı hale getiriyoruz.</p>
+          </div>
+          <div class="welcome-graphic">⚡</div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card" style="--accent:#6c63ff">
+            <div class="stat-icon">💰</div>
+            <div class="stat-info">
+              <span class="stat-num">12</span>
+              <span class="stat-label">Takip Edilen Ürün</span>
+            </div>
+          </div>
+          <div class="stat-card" style="--accent:#ff6584">
+            <div class="stat-icon">⭐</div>
+            <div class="stat-info">
+              <span class="stat-num">48</span>
+              <span class="stat-label">Analiz Edilen Yorum</span>
+            </div>
+          </div>
+          <div class="stat-card" style="--accent:#43e97b">
+            <div class="stat-icon">📦</div>
+            <div class="stat-info">
+              <span class="stat-num">7</span>
+              <span class="stat-label">Aktif Kargo</span>
+            </div>
+          </div>
+          <div class="stat-card" style="--accent:#f7971e">
+            <div class="stat-icon">👕</div>
+            <div class="stat-info">
+              <span class="stat-num">5</span>
+              <span class="stat-label">Beden Analizi</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dashboard-grid">
+          <div class="card">
+            <h3 class="card-title">📊 Fiyat Değişim Özeti</h3>
+            <div class="mini-chart" id="mini-chart"></div>
+          </div>
+          <div class="card">
+            <h3 class="card-title">🛡️ Platform Güven Raporu</h3>
+            <div class="trust-list">
+              <div class="trust-row"><span>Trendyol</span><div class="trust-bar"><div class="trust-fill" style="width:87%;background:#6c63ff"></div></div><span>87%</span></div>
+              <div class="trust-row"><span>Hepsiburada</span><div class="trust-bar"><div class="trust-fill" style="width:74%;background:#43e97b"></div></div><span>74%</span></div>
+              <div class="trust-row"><span>Amazon TR</span><div class="trust-bar"><div class="trust-fill" style="width:91%;background:#f7971e"></div></div><span>91%</span></div>
+              <div class="trust-row"><span>N11</span><div class="trust-bar"><div class="trust-fill" style="width:62%;background:#ff6584"></div></div><span>62%</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRICE TRACKER PAGE -->
+      <section class="page" id="page-price">
+        <div class="module-header">
+          <div class="module-icon" style="background:linear-gradient(135deg,#6c63ff,#a855f7)">💰</div>
+          <div>
+            <h2>Fiyat Takip Modülü</h2>
+            <p>Ürün fiyat geçmişini takip edin, fiyat koruması sağlayın.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title">Ürün Linki Girin</h3>
+          <div class="input-row">
+            <input type="url" id="price-url" placeholder="https://www.trendyol.com/urun-linki..." class="big-input"/>
+            <button class="btn-primary" onclick="analyzePriceURL()">Analiz Et</button>
+          </div>
+        </div>
+
+        <div id="price-result" class="hidden">
+          <div class="card price-card">
+            <div class="price-header">
+              <div>
+                <h3 id="price-product-name">Ürün Adı</h3>
+                <p id="price-platform" class="muted">Platform</p>
+              </div>
+              <div class="price-badge-group">
+                <span class="price-now" id="price-current">₺0</span>
+                <span class="price-old" id="price-old">₺0</span>
+              </div>
+            </div>
+            <div class="price-chart-container">
+              <canvas id="price-chart" width="600" height="200"></canvas>
+            </div>
+            <div class="price-protection">
+              <div class="protection-icon">🔒</div>
+              <div>
+                <strong>Fiyat Koruma Aktif</strong>
+                <p class="muted" id="price-protection-text">Bu fiyat 24 saat korunmaktadır.</p>
+              </div>
+              <span class="badge badge-green">Aktif</span>
+            </div>
+          </div>
+          <div class="price-alerts card">
+            <h3 class="card-title">📢 Fiyat Bildirimleri</h3>
+            <div id="price-alerts-list"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- REVIEW ANALYSIS PAGE -->
+      <section class="page" id="page-review">
+        <div class="module-header">
+          <div class="module-icon" style="background:linear-gradient(135deg,#ff6584,#ff8fab)">⭐</div>
+          <div>
+            <h2>Yorum Analiz Modülü</h2>
+            <p>Yapay zeka destekli sahte yorum tespiti ve güven skoru.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title">Yorum Metni Girin</h3>
+          <textarea id="review-text" class="big-textarea" placeholder="Analiz etmek istediğiniz yorum metnini buraya yapıştırın..."></textarea>
+          <div class="input-row" style="margin-top:12px;">
+            <input type="url" id="review-url" placeholder="Veya ürün linki girin..." class="big-input"/>
+            <button class="btn-primary" onclick="analyzeReview()">Analiz Et</button>
+          </div>
+        </div>
+
+        <div id="review-result" class="hidden">
+          <div class="reviews-grid">
+            <div class="card score-card">
+              <h3 class="card-title">🎯 Güven Skoru</h3>
+              <div class="score-circle-wrap">
+                <svg class="score-svg" viewBox="0 0 120 120">
+                  <circle cx="60" cy="60" r="50" fill="none" stroke="#1e1e2e" stroke-width="12"/>
+                  <circle cx="60" cy="60" r="50" fill="none" stroke="url(#scoreGrad)" stroke-width="12"
+                    stroke-dasharray="314" stroke-dashoffset="80" stroke-linecap="round"
+                    transform="rotate(-90 60 60)" id="score-arc"/>
+                  <defs>
+                    <linearGradient id="scoreGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#43e97b"/>
+                      <stop offset="100%" stop-color="#38f9d7"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <div class="score-num" id="review-score">74%</div>
+              </div>
+              <p class="score-label" id="review-verdict">Güvenilir Yorum</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">🔍 Detaylı Analiz</h3>
+              <div id="review-details"></div>
+            </div>
+          </div>
+          <div class="card">
+            <h3 class="card-title">📝 Örnek Yorumlar Analizi</h3>
+            <div id="sample-reviews"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CARGO PAGE -->
+      <section class="page" id="page-cargo">
+        <div class="module-header">
+          <div class="module-icon" style="background:linear-gradient(135deg,#43e97b,#38f9d7)">📦</div>
+          <div>
+            <h2>Kargo Tahmin Modülü</h2>
+            <p>Geçmiş teslimat verilerine göre saat aralığı tahmini.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title">Kargo Takip Numarası</h3>
+          <div class="input-row">
+            <input type="text" id="cargo-code" placeholder="TR123456789..." class="big-input"/>
+            <select id="cargo-company" class="big-select">
+              <option value="aras">Aras Kargo</option>
+              <option value="yurtici">Yurtiçi Kargo</option>
+              <option value="mng">MNG Kargo</option>
+              <option value="ptt">PTT Kargo</option>
+              <option value="ups">UPS</option>
+            </select>
+            <button class="btn-primary" onclick="analyzeCargo()">Sorgula</button>
+          </div>
+        </div>
+
+        <div id="cargo-result" class="hidden">
+          <div class="cargo-grid">
+            <div class="card">
+              <h3 class="card-title">📍 Teslimat Tahmini</h3>
+              <div class="delivery-prediction">
+                <div class="delivery-time" id="cargo-time-range"></div>
+                <p class="muted" id="cargo-date-label"></p>
+                <div class="confidence-bar">
+                  <span class="muted">Tahmin Güveni:</span>
+                  <div class="trust-bar" style="flex:1;margin:0 8px">
+                    <div class="trust-fill" id="cargo-confidence" style="background:#43e97b"></div>
+                  </div>
+                  <span id="cargo-confidence-num"></span>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <h3 class="card-title">🗺️ Canlı Durum</h3>
+              <div class="cargo-timeline" id="cargo-timeline"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SIZE ADVISOR PAGE -->
+      <section class="page" id="page-size">
+        <div class="module-header">
+          <div class="module-icon" style="background:linear-gradient(135deg,#f7971e,#ffd200)">👕</div>
+          <div>
+            <h2>Akıllı Beden Öneri Modülü</h2>
+            <p>Ölçülerinize göre marka bazlı uyum analizi.</p>
+          </div>
+        </div>
+
+        <div class="size-form-grid">
+          <div class="card">
+            <h3 class="card-title">📏 Ölçüleriniz</h3>
+            <div class="measurements-form">
+              <div class="form-group">
+                <label>Göğüs Çevresi (cm)</label>
+                <input type="number" id="chest" placeholder="90" class="measure-input"/>
+              </div>
+              <div class="form-group">
+                <label>Bel Çevresi (cm)</label>
+                <input type="number" id="waist" placeholder="75" class="measure-input"/>
+              </div>
+              <div class="form-group">
+                <label>Kalça Çevresi (cm)</label>
+                <input type="number" id="hip" placeholder="95" class="measure-input"/>
+              </div>
+              <div class="form-group">
+                <label>Boy (cm)</label>
+                <input type="number" id="height" placeholder="170" class="measure-input"/>
+              </div>
+              <div class="form-group">
+                <label>Kilo (kg)</label>
+                <input type="number" id="weight" placeholder="65" class="measure-input"/>
+              </div>
+              <div class="form-group">
+                <label>Ürün Kategorisi</label>
+                <select id="category" class="big-select">
+                  <option value="shirt">Üst Giyim (Gömlek/T-Shirt)</option>
+                  <option value="pants">Alt Giyim (Pantolon/Jean)</option>
+                  <option value="dress">Elbise/Etek</option>
+                  <option value="jacket">Ceket/Mont</option>
+                </select>
+              </div>
+              <button class="btn-primary full" onclick="analyzeSize()">Beden Analizi Yap</button>
+            </div>
+          </div>
+          <div id="size-result" class="card hidden">
+            <h3 class="card-title">🎯 Beden Önerileri</h3>
+            <div id="size-brands"></div>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- end page-container -->
+  </main>
+</div><!-- end app -->
+
+<script src="app.js"></script>
+</body>
+</html>
